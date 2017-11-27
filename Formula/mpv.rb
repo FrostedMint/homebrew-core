@@ -1,16 +1,7 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.27.0.tar.gz"
-  sha256 "341d8bf18b75c1f78d5b681480b5b7f5c8b87d97a0d4f53a5648ede9c219a49c"
-  revision 1
   head "https://github.com/mpv-player/mpv.git"
-
-  bottle do
-    sha256 "b70fbf4171a50a3ec4ea89ffdceb9f2dfef851670dba414025c4ac8ca6743fd1" => :high_sierra
-    sha256 "437240a1261e8871124fd9630ca70d59a82b8e164258ad78425a6595d9ea6837" => :sierra
-    sha256 "ffbd72e37a328a5c6d5779746c9e6462b3f6d260f365bd922716a16ad3f3cd8a" => :el_capitan
-  end
 
   option "with-bundle", "Enable compilation of the .app bundle."
 
@@ -18,7 +9,7 @@ class Mpv < Formula
   depends_on :python3 => :build
 
   depends_on "libass"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg-mpv"
 
   depends_on "jpeg" => :recommended
   depends_on "little-cms2" => :recommended

@@ -1,15 +1,9 @@
-class Ffmpeg < Formula
-  desc "Play, record, convert, and stream audio and video"
-  homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-3.4.tar.bz2"
-  sha256 "5d8911fe6017d00c98a359d7c8e7818e48f2c0cc2c9086a986ea8cb4d478c85e"
-  head "https://github.com/FFmpeg/FFmpeg.git"
+class FfmpegMpv < Formula
+  desc "Fork of ffmpeg for mpv"
+  homepage "https://github.com/mpv-player/ffmpeg-mpv"
+  head "https://github.com/mpv-player/ffmpeg-mpv.git"
 
-  bottle do
-    sha256 "1807e00fdfc308feaa78924e0b6991b26e6f37ea379ac82b78dca038a0f67a7b" => :high_sierra
-    sha256 "fb6b9798000d2a108b514763a08b5fe2fe9176bcb7e4676d0d8948d0e3d663b6" => :sierra
-    sha256 "82954cce27930c0416716931fda0c54bc21464394cf1c4cfe54232c670f040e0" => :el_capitan
-  end
+  keg_only "mpv depends on a forked ffmpeg"
 
   option "with-chromaprint", "Enable the Chromaprint audio fingerprinting library"
   option "with-fdk-aac", "Enable the Fraunhofer FDK AAC library"
